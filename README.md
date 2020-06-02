@@ -31,18 +31,18 @@ bin/run-with-profile postgres features/001_basic_materializations.feature
 
 added 
 
-'''bash
-+      seeds:
-+          test:
-+              seed:
-+                  column_types:
-+                      id: number(10,2)
-+                      first_name: varchar(250)
-+                      last_name: varchar(250)
-+                      email: varchar(250)
-+                      gender: varchar(250)
-+                      ip_address: varchar(250)
-'''
+```yml
+      seeds:
+          test:
+              seed:
+                  column_types:
+                      id: number(10,2)
+                      first_name: varchar(250)
+                      last_name: varchar(250)
+                      email: varchar(250)
+                      gender: varchar(250)
+                      ip_address: varchar(250)
+```
 
 to seed tests, agate and oracle types are not working properly without specifying types here.
 Without  explicitly specifing types, agate tries to insert with decimal(),(agate_helper.py line 115 at dbt project)
