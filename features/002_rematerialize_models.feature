@@ -19,6 +19,17 @@ Feature: Test re-materializing models as different types
       """
       name: test
       version: 1.0
+
+      seeds:
+        test:
+          seed:
+            column_types:
+              id: number(10,2)
+              first_name: varchar(250)
+              last_name: varchar(250)
+              email: varchar(250)
+              gender: varchar(250)
+              ip_address: varchar(250)      
       """
 
   Scenario Outline: Materialize as <first_materialization> first, then <second_materialization>

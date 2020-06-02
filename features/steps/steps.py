@@ -35,6 +35,12 @@ def step_i_successfully_execute_command(context, command):
     command += " --profile {}".format(
         context.config.userdata.get('profile_name')
     )
+    
+    if context.config.userdata.get('profile_dir') is not None:
+        command += " --profiles-dir {}".format(
+            context.config.userdata.get('profile_dir')
+        )   
+    print(command)
     behave4cmd0.command_steps.step_i_run_command(context, command)
     behave4cmd0.command_steps.step_it_should_pass(context)
 
